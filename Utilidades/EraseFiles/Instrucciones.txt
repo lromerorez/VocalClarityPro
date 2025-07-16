@@ -1,1 +1,16 @@
+Cómo Usar el Script borrado.py
+Guarda el código: Guarda el código anterior en un archivo llamado borrado.py.
+
+Abre tu terminal: Navega hasta el directorio donde guardaste borrado.py.
+
+Modo de SIMULACIÓN (¡RECOMENDADO PARA LA PRIMERA VEZ!)
+Este es el modo por defecto. Solo te mostrará en el log qué archivos cumplirían los criterios para ser borrados sin tocarlos realmente.
+
+Bash
+
+python clean_files.py "/ruta/a/tu/carpeta_a_limpiar"
+"/ruta/a/tu/carpeta_a_limpiar": Reemplaza esto con la ruta real de la carpeta que quieres escanear. Si la ruta contiene espacios, ponla entre comillas.
+
+Revisa el log: Después de ejecutarlo, abre el archivo logs_file_cleanup/file_cleanup.log y revisa cuidadosamente la lista de archivos que aparecen con [SIMULACIÓN BORRADO]. Asegúrate de que son los archivos que quieres eliminar.
+
 
