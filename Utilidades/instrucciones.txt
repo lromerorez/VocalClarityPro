@@ -1,0 +1,12 @@
+Cómo Usar Este Script (amr_to_wav_converter.py)
+Abre tu terminal: Navega hasta el directorio donde guardaste el archivo amr_to_wav_converter.py.
+
+Ejecuta el script:
+
+Bash
+
+python amr_to_wav_converter.py
+Introduce la ruta: El script te pedirá que ingreses la ruta completa de la carpeta que contiene tus archivos AMR. Por ejemplo:
+Introduce la ruta de la CARPETA que contiene los archivos AMR a convertir a WAV: /home/xx/GrabacionesDeVozAMR
+
+Espera: El script escaneará esa carpeta (y cualquier subcarpeta dentro de ella) en busca de archivos .amr y los convertirá uno por uno a .wav.
