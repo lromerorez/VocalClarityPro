@@ -1,0 +1,81 @@
+Guía de Instalación para VocalClarityPro.py
+Sigue estos pasos para preparar tu entorno y ejecutar el script VocalClarityPro.py.
+
+1. Verificar la Versión de Python
+Es altamente recomendado usar Python 3.10 o Python 3.11. Versiones más recientes (como 3.12+) pueden tener problemas de compatibilidad con algunas dependencias de PyTorch/Demucs.
+
+Para verificar tu versión de Python, abre una terminal y escribe:
+
+Bash
+
+python --version
+Si no tienes Python 3.10 o 3.11 instalado, o necesitas gestionarlas, considera usar herramientas como pyenv o conda.
+
+2. Instalar Sox (si no lo tienes)
+Sox es una herramienta de procesamiento de audio en línea de comandos que tu script usa para convertir formatos de audio si torchaudio no puede cargarlos directamente.
+
+En sistemas basados en Debian/Ubuntu:
+
+Bash
+
+sudo apt update
+sudo apt install sox libsox-fmt-all
+En sistemas basados en Arch Linux:
+
+Bash
+
+sudo pacman -S sox
+En macOS (usando Homebrew):
+
+Bash
+
+brew install sox
+En Windows:
+Descarga el instalador desde la página oficial de Sox (sourceforge.net/projects/sox/). Asegúrate de añadir Sox a la variable de entorno PATH durante la instalación o manualmente.
+
+Para verificar que Sox está instalado correctamente, abre una terminal y escribe:
+
+Bash
+
+sox --version
+3. Crear y Activar un Entorno Virtual de Python
+Es una buena práctica crear un entorno virtual para cada proyecto de Python. Esto aísla las dependencias y evita conflictos.
+
+Navega a la carpeta de tu proyecto (donde tienes VocalClarityPro.py):
+
+Bash
+
+cd /ruta/a/tu/carpeta/VocalClarityPro
+Crea el entorno virtual:
+
+Bash
+
+python3.11 -m venv .venv 
+# O usa 'python3.10 -m venv .venv' si esa es tu versión
+Esto creará una carpeta llamada .venv dentro de tu directorio de proyecto.
+
+Activa el entorno virtual:
+
+En Linux/macOS:
+
+Bash
+
+source .venv/bin/activate
+En Windows (Command Prompt):
+
+Bash
+
+.venv\Scripts\activate.bat
+En Windows (PowerShell):
+
+PowerShell
+
+.venv\Scripts\Activate.ps1
+Verás (.venv) o un prefijo similar en tu línea de comandos, indicando que el entorno está activo.
+
+4. Instalar las Dependencias de Python
+Con el entorno virtual activado, instala todas las librerías necesarias.
+
+Bash
+
+pip install torch torchaudio noisereduce demucs tqdm

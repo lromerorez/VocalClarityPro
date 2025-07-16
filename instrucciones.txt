@@ -1,0 +1,61 @@
+Instrucciones de Uso del Script VocalClarityPro.py
+Aquí tienes las instrucciones detalladas con sus variantes, listas para copiar y pegar en un archivo de texto (por ejemplo, USO.txt).
+
+# Archivo: USO.txt
+
+## Cómo usar VocalClarityPro.py
+
+Este script te permite separar voces, reducir ruido y normalizar el volumen de archivos de audio, guardando opcionalmente todos los stems separados por Demucs.
+
+### Requisitos:
+- Python 3.10 o 3.11 (recomendado).
+- Entorno virtual de Python activado.
+- Librerías instaladas: torchaudio, torch, noisereduce, demucs, tqdm, pathlib.
+- Sox instalado en tu sistema (para conversión automática de formatos).
+
+### Comandos de Ejecución:
+
+Asegúrate de estar en el directorio donde tienes 'VocalClarityPro.py' y con tu entorno virtual activado.
+
+#### 1. Procesar solo las voces (separación, reducción de ruido y normalización):
+
+Este es el uso más común para obtener una pista vocal limpia y con volumen ajustado. El resultado "_vocalclarity.wav" se guardará directamente en la carpeta "processed_audio_clarity/".
+
+```bash
+python VocalClarityPro.py --path "/ruta/a/tu/archivo_o_carpeta_de_audio" --denoise --normalize
+Ejemplo:
+python VocalClarityPro.py --path "/home/lr/Música/grabaciones/cancion.mp3" --denoise --normalize
+
+2. Procesar las voces Y guardar TODOS los stems (voces, batería, bajo, otros):
+Esto generará la pista "_vocalclarity.wav" en la carpeta principal "processed_audio_clarity/", y además creará una subcarpeta con el nombre del archivo original (ej. "processed_audio_clarity/cancion/") donde se guardarán todos los stems separados (vocals.wav, drums.wav, bass.wav, other.wav).
+
+Nota: Todos los stems (incluido el de voz que va a la subcarpeta) pasarán por los procesos de reducción de ruido y normalización si se especifican.
+
+Bash
+
+python VocalClarityPro.py --path "/ruta/a/tu/archivo_o_carpeta_de_audio" --denoise --normalize --save-stems
+Ejemplo:
+python VocalClarityPro.py --path "/home/lr/Música/grabaciones/cancion.mp3" --denoise --normalize --save-stems
+
+3. Solo separar voces (sin reducción de ruido ni normalización):
+Útil si solo quieres las voces separadas, sin ningún procesamiento adicional. El resultado "_vocalclarity.wav" se guardará directamente en "processed_audio_clarity/".
+
+Bash
+
+python VocalClarityPro.py --path "/ruta/a/tu/archivo_o_carpeta_de_audio"
+Ejemplo:
+python VocalClarityPro.py --path "/home/lr/Música/grabaciones/cancion.mp3"
+
+4. Opciones Individuales:
+Puedes combinar las opciones --denoise y --normalize según tus necesidades.
+
+Solo separación y reducción de ruido:
+
+Bash
+
+python VocalClarityPro.py --path "/ruta/a/tu/archivo_o_carpeta_de_audio" --denoise
+Solo separación y normalización de volumen:
+
+Bash
+
+python VocalClarityPro.py --path "/ruta/a/tu/archivo_o_carpeta_de_audio" --normalize
